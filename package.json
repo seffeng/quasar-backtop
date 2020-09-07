@@ -1,0 +1,31 @@
+{
+  "name": "q-backtop",
+  "version": "0.1.0",
+  "description": "quasar-backtop",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "quasar",
+    "backtop"
+  ],
+  "author": {
+    "name": "seffeng",
+    "email": "save.zxf@gmail.com"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "quasar": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-imports": "1.5.0",
+    "vue-cli-plugin-quasar": "~2.0.2"
+  },
+  "license": "MIT",
+  "deprecated": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seffeng/quasar-backtop.git"
+  }
+}
