@@ -1,6 +1,6 @@
 {
   "name": "q-backtop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "quasar-backtop",
   "main": "src/main.js",
   "scripts": {
