@@ -30,6 +30,6 @@ export default {
 | text    | string  | 返回顶部           | 鼠标悬停提示 |
 | right   | int     | 20                 | 距离右侧距离 |
 | bottom  | int     | 20                 | 距离底部距离 |
-| z-index | int     | 999                | 样式 z-index |
+| z-index | int     | 10240              | 样式 z-index |
 | round   | boolean | true               | 是否圆形     |
 
