@@ -1,5 +1,11 @@
 # Vue Quasar Backtop
 
+## 安装
+
+```shell
+npm install q-backtop
+```
+
 ## 示例
 
 ```vue
