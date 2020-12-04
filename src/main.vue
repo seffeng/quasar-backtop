@@ -7,7 +7,7 @@
     :expand="expand"
     :position="position"
   >
-    <div v-if="expand" class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+    <div v-if="expand" :class="styleClass">
       {{ text === '' ? '返回顶部' : text }}
     </div>
     <q-btn v-else :fab-mini="round" :icon="icon" :color="color" :glossy="glossy">
@@ -69,6 +69,11 @@ export default {
     text: {
       type: String,
       default: '返回顶部'
+    }
+  },
+  computed: {
+    styleClass() {
+      return `col cursor-pointer q-pa-sm bg-${this.color} text-white text-center`
     }
   }
 }
