@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.9.8",
-    "quasar": "^1.14.5",
+    "quasar": "^1.14.5"
   },
   "devDependencies": {
     "babel-plugin-transform-imports": "1.5.0",
