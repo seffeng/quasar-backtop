@@ -5,7 +5,7 @@
     :reverse="reverse"
     :offset="[right, bottom]"
     :expand="expand"
-    :position="position"
+    :position="validPosition"
   >
     <div v-if="expand" :class="styleClass">
       {{ text === '' ? '返回顶部' : text }}
@@ -71,9 +71,25 @@ export default {
       default: '返回顶部'
     }
   },
+  data() {
+    return {
+      positionItems: ['top-right', 'top-left', 'bottom-right', 'bottom-left', 'top', 'right', 'bottom', 'left']
+    }
+  },
   computed: {
     styleClass() {
       return `col cursor-pointer q-pa-sm bg-${this.color} text-white text-center`
+    },
+    validPosition() {
+      if (this.inArray(this.position, this.positionItems)) {
+        return this.position
+      }
+      return 'right'
+    }
+  },
+  methods: {
+    inArray(needle, haystack) {
+      return haystack.length > 0 && haystack.includes(needle)
     }
   }
 }
