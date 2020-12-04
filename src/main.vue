@@ -1,51 +1,35 @@
 <template>
-  <div v-scroll="handleScroll" class="backtop-container">
-    <q-btn
-      v-if="visible"
-      :round="round"
-      :color="color"
-      class="fixed-bottom-right animate-pop"
-      :style="positionStyle"
-      @click="handleBacktop"
-    >
-      <q-icon :name="icon" />
+  <q-page-scroller
+    :scroll-offset="scrollOffset"
+    :duration="duration"
+    :reverse="reverse"
+    :offset="[right, bottom]"
+    :expand="expand"
+    :position="position"
+  >
+    <q-btn :fab-mini="round" :icon="icon" :color="color" :glossy="glossy">
       <q-tooltip v-if="text">
         {{ text }}
       </q-tooltip>
     </q-btn>
-  </div>
+  </q-page-scroller>
 </template>
 
 <script>
-import { scroll } from 'quasar'
-const { setScrollPosition } = scroll
-
 export default {
   name: 'Backtop',
   props: {
-    round: {
-      type: Boolean,
-      default: true
-    },
-    position: {
+    scrollOffset: {
       type: Number,
       default: 200
     },
     duration: {
       type: Number,
-      default: 1000
+      default: 300
     },
-    color: {
-      type: String,
-      default: 'primary'
-    },
-    icon: {
-      type: String,
-      default: 'vertical_align_top'
-    },
-    text: {
-      type: String,
-      default: '返回顶部'
+    reverse: {
+      type: Boolean,
+      default: false
     },
     right: {
       type: Number,
@@ -55,34 +39,33 @@ export default {
       type: Number,
       default: 20
     },
-    zIndex: {
-      type: Number,
-      default: 10240
-    }
-  },
-  data() {
-    return {
-      visible: false
-    }
-  },
-  computed: {
-    positionStyle() {
-      return {
-        'margin': `0 ${this.right}px ${this.bottom}px 0`,
-        'z-index': this.zIndex
-      }
-    }
-  },
-  methods: {
-    handleScroll(position) {
-      if (position > this.position) {
-        this.visible = true
-      } else {
-        this.visible = false
-      }
+    expand: {
+      type: Boolean,
+      default: true
     },
-    handleBacktop() {
-      setScrollPosition(window, 0, this.duration)
+    position: {
+      type: String,
+      default: 'bottom-right'
+    },
+    round: {
+      type: Boolean,
+      default: true
+    },
+    icon: {
+      type: String,
+      default: 'vertical_align_top'
+    },
+    color: {
+      type: String,
+      default: 'primary'
+    },
+    glossy: {
+      type: Boolean,
+      default: false
+    },
+    text: {
+      type: String,
+      default: '返回顶部'
     }
   }
 }
