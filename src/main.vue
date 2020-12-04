@@ -7,7 +7,10 @@
     :expand="expand"
     :position="position"
   >
-    <q-btn :fab-mini="round" :icon="icon" :color="color" :glossy="glossy">
+    <div v-if="expand" class="col cursor-pointer q-pa-sm bg-accent text-white text-center">
+      {{ text === '' ? '返回顶部' : text }}
+    </div>
+    <q-btn v-else :fab-mini="round" :icon="icon" :color="color" :glossy="glossy">
       <q-tooltip v-if="text">
         {{ text }}
       </q-tooltip>
@@ -41,7 +44,7 @@ export default {
     },
     expand: {
       type: Boolean,
-      default: true
+      default: false
     },
     position: {
       type: String,
