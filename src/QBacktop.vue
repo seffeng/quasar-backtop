@@ -19,8 +19,10 @@
 </template>
 
 <script>
-export default {
-  name: 'Backtop',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'QBacktop',
   props: {
     scrollOffset: {
       type: Number,
@@ -49,7 +51,7 @@ export default {
     position: {
       type: String,
       default: 'bottom-right',
-      validator: function(value) {
+      validator: function (value) {
         return ['top-right', 'top-left', 'bottom-right', 'bottom-left', 'top', 'right', 'bottom', 'left'].indexOf(value) !== -1
       }
     },
@@ -75,13 +77,9 @@ export default {
     }
   },
   computed: {
-    styleClass() {
+    styleClass () {
       return `col cursor-pointer q-pa-sm bg-${this.color} text-white text-center`
     }
   }
-}
+})
 </script>
-
-<style lang="scss" scoped>
-
-</style>
